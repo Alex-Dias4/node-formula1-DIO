@@ -1,12 +1,25 @@
 import fastify from "fastify";
-import { request } from "http";
+import cors from "@fastify/cors"
 
 const server = fastify({logger: true});
 
+server.register(cors, {
+    origin: "*",
+})
+
 const teams = [
-    {id:1, name: "mcLaren", base: "Woking, UK"},
-    {id: 2, name: "mercedes", base:"Brackley, UK"},
-    {id: 3, name: "red bull racing", base:"Milton keynes, UK"},
+  { id: 1, name: "McLaren", base: "Woking, UK" },
+  { id: 2, name: "Mercedes", base: "Brackley, UK" },
+  { id: 3, name: "Red Bull Racing", base: "Milton Keynes, UK" },
+  { id: 4, name: "Ferrari", base: "Maranello, Italy" },
+  { id: 5, name: "Aston Martin", base: "Silverstone, UK" },
+  { id: 6, name: "Alpine", base: "Enstone, UK" },
+  { id: 7, name: "Williams", base: "Grove, UK" },
+  { id: 8, name: "AlphaTauri", base: "Faenza, Italy" },
+  { id: 9, name: "Sauber", base: "Hinwil, Switzerland" },
+  { id: 10, name: "Haas", base: "Kannapolis, USA" },
+  { id: 11, name: "Andretti (proposed)", base: "Indianapolis, USA" },
+  { id: 12, name: "Hitech GP (proposed)", base: "Silverstone, UK" }
 ]
 
 const drivers = [
